@@ -17,7 +17,13 @@ puts "Creating restaurants..."
   category = ["chinese", "italian", "japanese", "french", "belgian"].sample
 
   restaurant = Restaurant.create(name: name, address: address, phone_number: phone_number, category: category)
-  # restaurant.reviews.content = Faker::Restaurant.review
+  content = Faker::Restaurant.review
+  rating = rand(0..5)
+  review = Review.create(rating: rating, content: content, restaurant: restaurant)
+
+
+  # restaurant.reviews[0].content = Faker::Restaurant.review
+  # restaurant.reviews[0].rating = rand(0..5)
   puts "Created Restaurant id: #{restaurant.id}"
 end
 
