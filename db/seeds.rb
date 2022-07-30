@@ -17,6 +17,7 @@ puts "Creating restaurants..."
   category = ["chinese", "italian", "japanese", "french", "belgian"].sample
 
   restaurant = Restaurant.create(name: name, address: address, phone_number: phone_number, category: category)
+  # restaurant.reviews.content = Faker::Restaurant.review
   puts "Created Restaurant id: #{restaurant.id}"
 end
 
