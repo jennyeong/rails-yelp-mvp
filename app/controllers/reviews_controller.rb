@@ -12,7 +12,10 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to restaurant_path(@restaurant)
     else
-      render :new, status: :unprocessable_entity
+      # render :new, status: :unprocessable_entity
+      # redirect_to restaurant_path(@restaurant)
+      render 'restaurants/show', status: :unprocessable_entity
+      # flash[:danger] = @review.errors.full_messages
     end
   end
 

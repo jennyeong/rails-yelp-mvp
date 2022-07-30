@@ -10,9 +10,11 @@
 </ul>
 <br>
 
+<%= render "restaurants/form_review", restaurant: @restaurant, review: @review %>
+
 <div>
   <%= link_to "Edit this restaurant", edit_restaurant_path(@restaurant) %> |
-  <%= link_to "Back to restaurants", restaurants_path %> |
-  <%= link_to "Add a review", new_restaurant_review_path(@restaurant) %>
+  <%= link_to "Back to restaurants", restaurants_path %>
+  <%# <%= link_to "Add a review", new_restaurant_review_path(@restaurant) %>
   <%= button_to "Destroy this restaurant", @restaurant, method: :delete %>
 </div>
